@@ -45,26 +45,26 @@ class MainControllerTest {
 
     @Test
     void console() throws Exception {
-        this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("Console")));
+        this.mockMvc.perform(get("/console")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("Console")));
     }
 
     @Test
     void consoleAdd() throws Exception {
-        this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("Console")));
+        this.mockMvc.perform(get("/console")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("Console")));
     }
 
     @Test
     void file() throws Exception {
-        this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("File")));
+        this.mockMvc.perform(get("/file")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("File")));
     }
 
     @Test
     void mysql() throws Exception {
-        this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("MySQL")));
+        this.mockMvc.perform(get("/mysql")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("MySQL")));
     }
 
     @Test
     void mongodb() throws Exception {
-        this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("MongoDB")));
+        this.mockMvc.perform(get("/mongodb")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("MongoDB")));
     }
 }
