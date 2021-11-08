@@ -1,13 +1,17 @@
 package com.example.spring.models;
 
+import ch.qos.logback.classic.Logger;
 import com.example.spring.ui.Counting;
 import com.example.spring.ui.SavingStatistic;
+import org.slf4j.LoggerFactory;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Counter implements Counting {
     private static final Pattern pattern = Pattern.compile("[" + "a A e E i I o O u U y Y" + "]");
+
+    private static final Logger logger = (Logger) LoggerFactory.getLogger(Counter.class);
 
     @Override
     public String identify(String textIdentify, String typeInput) {
@@ -29,7 +33,7 @@ public class Counter implements Counting {
             }
             return String.valueOf(savingStatistic.saveStatistic(vowelsQuantity, consonantsQuantity, vowels, consonants, textIdentify, typeInput));
         } catch (Exception e) {
-            System.err.println("Error: Occurred while checking vowels and consonants");
+            logger.error("Error: Occurred while checking vowels and consonants");
             return null;
         }
     }
